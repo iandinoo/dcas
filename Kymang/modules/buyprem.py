@@ -5,7 +5,7 @@ from pyrogram.types import *
 from pytz import timezone
 import datetime
 
-now = datetime.now(timezone("Asia/Jakarta"))
+now = datetime.datetime.now(timezone("Asia/Jakarta"))
 expired = now + relativedelta(days=int(30))
 DATE = expired.strftime("%d-%B-%Y")  
 
