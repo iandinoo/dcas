@@ -3,8 +3,9 @@ from datetime import datetime, timedelta
 from pyrogram import Client, filters
 from pyrogram.types import *
 from pytz import timezone
+import datetime
 
-now = datetime.datetime.now(timezone("Asia/Jakarta"))
+now = datetime.now(timezone("Asia/Jakarta"))
 expired = now + relativedelta(days=int(30))
 DATE = expired.strftime("%d-%B-%Y")  
 
