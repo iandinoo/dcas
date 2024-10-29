@@ -60,7 +60,7 @@ DUA_BULAN = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton("-1 Bulan", callback_data="month1"),
-            InlineKeyboardButton("+1 Bulan", callback_data="month2"),
+            InlineKeyboardButton("+1 Bulan", callback_data="month3"),
         ],
         [
             InlineKeyboardButton("❌ Batalkan", callback_data="back_start"),
@@ -72,3 +72,35 @@ DUA_BULAN = InlineKeyboardMarkup(
 @bot.on_callback_query(filters.regex("month2"))
 async def month2(c: Bot, cb: CallbackQuery):
     await cb.edit_message_text(C15.format(DATE), reply_markup=DUA_BULAN)
+
+C20 = """
+<b>🛒 Keranjang</b>
+• Fsub Premium 3 Bulan
+
+[•] <b>Tanggal Kadaluarsa:</b> {}
+
+• <b>Harga: Rp.120.000</b>
+• <b>Diskon: -Rp.10.000</b>
+• <b>Total Harga: Rp.110.000</b>
+"""
+
+TIGA_BULAN = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton("📅Bulan", callback_data="JK10"),
+        ],
+        [
+            InlineKeyboardButton("-1 Bulan", callback_data="month2"),
+            InlineKeyboardButton("+1 Bulan", callback_data="month4"),
+        ],
+        [
+            InlineKeyboardButton("❌ Batalkan", callback_data="back_start"),
+            InlineKeyboardButton("✅ Lanjutkan", callback_data="mulai"),
+        ],
+    ]
+)
+
+@bot.on_callback_query(filters.regex("month3"))
+async def month3(c: Bot, cb: CallbackQuery):
+    await cb.edit_message_text(C20.format(DATE), reply_markup=DUA_BULAN)
+    
