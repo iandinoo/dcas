@@ -3,9 +3,15 @@ import logging
 import asyncio
 import importlib
 
+from dateutil.relativedelta import relativedelta
 from datetime import datetime, timedelta
 from pyrogram import Client, filters
 from pyrogram.types import *
+from pytz import timezone
+
+now = datetime.datetime.now(timezone("Asia/Jakarta"))
+expired = now + relativedelta(days=int(30))
+DATE = expired.strftime("%d-%B-%Y")  
 
 C10 = """
 <b>🛒 Keranjang</b>
@@ -15,10 +21,6 @@ C10 = """
 
 <b>Total Harga: Rp.40.000</b>
 """
-
-now = datetime.datetime.now(timezone("Asia/Jakarta"))
-expired = now + relativedelta(days=int(25))
-DATE = expired.strftime("%d-%B-%Y")  
 
 @bot.on_callback_query(filters.regex("month1"))
 async def month1(c: Bot, cb: CallbackQuery):
