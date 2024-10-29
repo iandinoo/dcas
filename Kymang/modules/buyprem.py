@@ -16,7 +16,11 @@ C10 = """
 <b>Total Harga: Rp.40.000</b>
 """
 
+now = datetime.datetime.now(timezone("Asia/Jakarta"))
+expired = now + relativedelta(days=int(25))
+DATE = expired.strftime("%d-%B-%Y")  
+
 @bot.on_callback_query(filters.regex("month1"))
 async def month1(c: Bot, cb: CallbackQuery):
-    await cb.edit_message_text(C10, reply_markup=KL10)
+    await cb.edit_message_text(C10.format(DATE), reply_markup=KL10)
 
