@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv(".env")
 
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "7368858350:AAH20IUEV1o_f_vAPj187fTlmU_2Im8MjW8")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "7370163396:AAG9sDi08fum8Vh2_3au1f0CiEknyJxhYfE")
 API_ID = int(os.environ.get("API_ID", "6244159"))
 API_HASH = os.environ.get("API_HASH", "3f15b21827506cb63890f756743be15f")
 MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://fsubprem:itsiannnn@fsubprem.lgqre.mongodb.net/?retryWrites=true&w=majority&appName=fsubprem")
