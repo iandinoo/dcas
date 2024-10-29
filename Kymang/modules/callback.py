@@ -40,7 +40,7 @@ async def _(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(text="👨‍💻 Via Admin", user_id=1846991467),
-                    InlineKeyboardButton(text="🤖 Via Bot", callback_data="XZ10"),
+                    InlineKeyboardButton(text="🤖 Via Bot", callback_data="month1"),
                 ],
                 [
                     InlineKeyboardButton(
