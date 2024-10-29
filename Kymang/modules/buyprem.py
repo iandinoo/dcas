@@ -1,8 +1,3 @@
-import os
-import logging
-import asyncio
-import importlib
-
 from dateutil.relativedelta import relativedelta
 from datetime import datetime, timedelta
 from pyrogram import Client, filters
@@ -37,7 +32,7 @@ SATU_BULAN = InlineKeyboardMarkup(
             InlineKeyboardButton("+1 Bulan", callback_data="month2"),
         ],
         [
-            InlineKeyboardButton("❌ Batalkan", callback_data="mulai"),
+            InlineKeyboardButton("❌ Batalkan", callback_data="back_start"),
             InlineKeyboardButton("✅ Lanjutkan", callback_data="mulai"),
         ],
     ]
@@ -64,11 +59,11 @@ DUA_BULAN = InlineKeyboardMarkup(
             InlineKeyboardButton("📅Bulan", callback_data="JK10"),
         ],
         [
-            InlineKeyboardButton("-1 Bulan", callback_data="month0"),
+            InlineKeyboardButton("-1 Bulan", callback_data="month1"),
             InlineKeyboardButton("+1 Bulan", callback_data="month2"),
         ],
         [
-            InlineKeyboardButton("❌ Batalkan", callback_data="mulai"),
+            InlineKeyboardButton("❌ Batalkan", callback_data="back_start"),
             InlineKeyboardButton("✅ Lanjutkan", callback_data="mulai"),
         ],
     ]
@@ -76,4 +71,4 @@ DUA_BULAN = InlineKeyboardMarkup(
 
 @bot.on_callback_query(filters.regex("month2"))
 async def month2(c: Bot, cb: CallbackQuery):
-    await cb.edit_message_text(C15.format(DATE), reply_markup=SATU_BULAN)
+    await cb.edit_message_text(C15.format(DATE), reply_markup=DUA_BULAN)
